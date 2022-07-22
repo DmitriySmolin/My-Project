@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Формы</title>
+</head>
+
+<body>
+    <div class="container">
+      <div style="text-align: center;">
+        <a class="openModal" href="#openModal">Кликни на меня</a>
+      </div>
+      <div id="openModal" class="modal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <a href="#close" title="Close" class="close">×</a>
+            </div>
+                <div class="registration-cssave">
+                    <form class="form" action="http://localhost:3000/backend/index.php" method="POST">
+                        <h3 class="form__title">Авторизация</h3>
+                        <div class="form-group">
+                            <input class="form-control item" type="password" name="password" minlength="6" id="password"
+                                placeholder="Пароль" required>
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control item" type="email" name="email" id="email" placeholder="Email" required>
+                        </div>
+                        <div class="form-buttons">
+                            <button class="btn btn-primary btn-block create-account" type="submit">Вход</button>
+                            <a class="btn btn-primary btn-block create-account" href="register.html">Регистрация</a>
+                        </div>
+                    </form>
+                </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+<script>
+
+class Modal {
+
+    constructor(selector){
+        this.modal = document.querySelector('[href="#openModal"]');
+        this.closeModal = document.querySelector('[href="#openModal"]');
+    }
+
+    show (){
+        this.modal.addEventListener('click',  () => {
+        console.log('work');
+        document.body.style.overflow = 'hidden';
+      });
+    }
+
+    close () {
+      this.closeModal.addEventListener('click', () => {
+        document.body.style.overflow = 'visible';
+      });
+    }
+
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+        const modal = new Modal();
+        modal.show();
+        modal.close();
+    });
+</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Формы</title>
+</head>
+
+<body>
+    <div class="registration-cssave">
+        <form class="form">
+            <h3 class="form__title">Регистрация</h3>
+            <div class="form-group">
+                <input class="form-control item" type="text" name="username"  placeholder="Имя" required>
+            </div>
+            <div class="form-group">
+                <input class="form-control item" type="text" name="lastname" placeholder="Фамилия" required>
+            </div>
+            <div class="form-group">
+                <input class="form-control item" type="email" name="email" placeholder="Email" required>
+            </div>
+            <div class="form-group">
+                <input class="form-control item" type="password" name="password" placeholder="Пароль" required>
+            </div>
+            <div class="form-group">
+                <input class="form-control item" type="password" name="confirm_password"  placeholder="Повторите пароль" required>
+            </div>
+            <div class="form-buttons">
+                <button class="btn btn-primary btn-block create-account" onclick='backHome()'>Вход</button>
+                <button class="btn btn-primary btn-block create-account">Регистрация</button>
+            </div>
+        </form>
+    </div>
+</body>
+
+<script>
+   function backHome() {
+    event.preventDefault();
+    window.location.href = 'http://127.0.0.1:5500/index.html';
+   }
+</script>
+
+</html>
